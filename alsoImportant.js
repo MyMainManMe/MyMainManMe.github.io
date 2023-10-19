@@ -4,9 +4,13 @@ function whatDayIsit() {
   var d = new Date();
   var elem = document.getElementById("answer");
   var title = document.getElementById("title");
+  var timeTitle = document.getElementById("timeTitle");
+  var totalTimeTitle = document.getElementById("totalTimeTitle");
   var dateNum = d.getDay();
   if (lang === 0){
     title.innerHTML = "Hvilken dag er det?"
+    timeTitle.innerHTML = "Tid til fredag:"
+    totalTimeTitle.innerHTML = "Tid til fredag (Opdelt):"
     switch (dateNum){
       case 0:
         elem.innerHTML = "Søndag"
@@ -51,6 +55,8 @@ function whatDayIsit() {
   }
   if (lang === 1){
     title.innerHTML = "What day is it?"
+    timeTitle.innerHTML = "Time till friday:"
+    totalTimeTitle.innerHTML = "Time till friday (Segregated):"
     switch (dateNum){
       case 0:
         elem.innerHTML = "Sunday"
@@ -101,6 +107,7 @@ function updateCountdown() {
   const countdownHour = document.getElementById('countDownHour');
   const totalCountdownSec = document.getElementById('totalCountDownSecond');
   const totalCountdownMin = document.getElementById('totalCountDownMinute');
+  const totalCountdownHour = document.getElementById('totalCountDownHour');
 
   function secondsUntilFriday() {
     const today = new Date();
@@ -121,6 +128,7 @@ function updateCountdown() {
   function displayCountdown() {
     let remainingSeconds = secondsUntilFriday();
     let remainingMinutes = Math.floor(secondsUntilFriday() / 60);
+    let remaningHours = Math.floor(secondsUntilFriday() / 3600)
 
     let remainingSecondsCalculated = remainingSeconds;
     let remainingHoursCalculated = Math.floor(remainingSecondsCalculated / 3600);
@@ -134,6 +142,7 @@ function updateCountdown() {
       countdownHour.textContent = `Timer til fredag: ${remainingHoursCalculated}`;
       totalCountdownSec.textContent = `Total sekunder: ${remainingSeconds}`;
       totalCountdownMin.textContent = `Total minutter: ${remainingMinutes}`;
+      totalCountdownHour.textContent = `Total timer: ${remaningHours}`;
     }
 
     if (lang === 1){
@@ -142,6 +151,7 @@ function updateCountdown() {
       countdownHour.textContent = `Hours till friday: ${remainingHoursCalculated}`;
       totalCountdownSec.textContent = `Total seconds: ${remainingSeconds}`;
       totalCountdownMin.textContent = `Total minutes: ${remainingMinutes}`;
+      totalCountdownHour.textContent = `Total hours: ${remaningHours}`;
     }
   }
 
@@ -166,3 +176,17 @@ function setLangToEnglish(){
   whatDayIsit();
   displayCountdown();
 }
+
+
+function createBeer() {
+  const beer = document.createElement("div");
+  beer.classList.add("beerfall");
+  beer.style.left = `${Math.random() * window.innerWidth}px`;
+  beer.style.top = 0;
+  document.body.appendChild(beer);
+  beer.addEventListener("animationiteration", () => {
+      document.body.removeChild(beer);
+  });
+}
+
+setInterval(createBeer, 60000);
