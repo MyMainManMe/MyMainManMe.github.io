@@ -9,8 +9,6 @@ function whatDayIsit() {
   var dateNum = d.getDay();
   if (lang === 0){
     title.innerHTML = "Hvilken dag er det?"
-    timeTitle.innerHTML = "Tid til fredag:"
-    totalTimeTitle.innerHTML = "Tid til fredag (Opdelt):"
     switch (dateNum){
       case 0:
         elem.innerHTML = "Søndag"
@@ -55,8 +53,6 @@ function whatDayIsit() {
   }
   if (lang === 1){
     title.innerHTML = "What day is it?"
-    timeTitle.innerHTML = "Time till friday:"
-    totalTimeTitle.innerHTML = "Time till friday (Segregated):"
     switch (dateNum){
       case 0:
         elem.innerHTML = "Sunday"
@@ -136,28 +132,32 @@ function updateCountdown() {
     let remainingMinutesCalculated = Math.floor(remainingSecondsCalculated / 60);
     remainingSecondsCalculated %= 60;  // Remaining seconds after removing full minutes
 
-    if (lang === 0){
+    if (lang === 0 && secondsUntilFriday > 0){
       countdownSec.textContent = `Sekunder til fredag: ${remainingSecondsCalculated}`;
       countdownMin.textContent = `Minutter til fredag: ${remainingMinutesCalculated}`;
       countdownHour.textContent = `Timer til fredag: ${remainingHoursCalculated}`;
       totalCountdownSec.textContent = `Total sekunder: ${remainingSeconds}`;
       totalCountdownMin.textContent = `Total minutter: ${remainingMinutes}`;
       totalCountdownHour.textContent = `Total timer: ${remaningHours}`;
+      timeTitle.innerHTML = "Tid til fredag:"
+      totalTimeTitle.innerHTML = "Tid til fredag (Opdelt):"
     }
 
-    if (lang === 1){
+    if (lang === 1 && secondsUntilFriday > 0){
       countdownSec.textContent = `Seconds till friday: ${remainingSecondsCalculated}`;
       countdownMin.textContent = `Minutes till friday: ${remainingMinutesCalculated}`;
       countdownHour.textContent = `Hours till friday: ${remainingHoursCalculated}`;
       totalCountdownSec.textContent = `Total seconds: ${remainingSeconds}`;
       totalCountdownMin.textContent = `Total minutes: ${remainingMinutes}`;
       totalCountdownHour.textContent = `Total hours: ${remaningHours}`;
+      timeTitle.innerHTML = "Time till friday:"
+      totalTimeTitle.innerHTML = "Time till friday (Segregated):"
     }
   }
 
-  if (secondsUntilFriday() > 0){
+  
     displayCountdown();
-  } 
+   
 
   setInterval(displayCountdown, 100);
 }
