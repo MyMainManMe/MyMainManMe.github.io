@@ -190,3 +190,8 @@ function createBeer() {
 }
 
 setInterval(createBeer, 60000);
+
+function setLightMode(){
+  const lightMode = document.getElementById("lightMode");
+  lightMode.textContent = ">:(";
+}
