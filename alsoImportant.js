@@ -191,7 +191,12 @@ function createBeer() {
 
 setInterval(createBeer, 60000);
 
+var timesClicked = 0;
 function setLightMode(){
   const lightMode = document.getElementById("lightMode");
-  lightMode.textContent = ">:(";
+  timesClicked++;
+  if (timesClicked === 1){
+  lightMode.textContent = "):";
+}
+  lightMode.textContent += "<";
 }
