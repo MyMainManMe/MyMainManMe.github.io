@@ -8,25 +8,29 @@
         <div id="language-selection">
             <button id="danish-flag" class="language-button" onclick="setLangToDanish()"><img src="danish-flag.png" alt="Danish Flag"></button>
             <button id="english-flag" class="language-button" onclick="setLangToEnglish()"><img src="english-flag.png" alt="English Flag"></button>
-            <button id="lightMode" class="lightMode" onclick="setLightMode()">Light Mode</button>
+            <button id="switchMode" class="switchMode" onclick="switchMode()">Light Mode</button>
         </div>
         <div class="image-container">
             <div class="hidden-image">
-                <img src="stare.jfif" alt="Hovered Image">
+                <img src="stare.jfif" alt="Hovered Image" id="stareImg">
+                <audio id="audio" src="stare.mp3"></audio>
+                <p class="stareText">psst... Interact with the page and then re-hover</p>
             </div>
         </div>
         <h1 id="title"></h1>
         <h2 id="answer" class="Friday"></h2>
         <img class="fridayFrog" id="fridayFrog" src="rainbow-frog.gif">
         <img class="wednesdayFrog" id="wednesdayFrog" src="wednesdayFrog.jfif">
-        <h3 id="totalTimeTitle" class="totalTimeTitle"></h3>
-        <h3 id="timeTitle" class="timeTitle"></h3>
-        <p id="countDownSecond" class="sec"></p>
-        <p id="countDownMinute" class="min"></p>
-        <p id="countDownHour" class="hour"></p>
-        <p id="totalCountDownSecond" class="totalsec"></p>
-        <p id="totalCountDownMinute" class="totalmin"></p>
-        <p id="totalCountDownHour" class="totalhour"></p>
+        <div id="flashingText" class="flashingTextDark">
+            <h3 id="totalTimeTitle" class="totalTimeTitle"></h3>
+            <h3 id="timeTitle" class="timeTitle"></h3>
+            <p id="countDownSecond" class="sec"></p>
+            <p id="countDownMinute" class="min"></p>
+            <p id="countDownHour" class="hour"></p>
+            <p id="totalCountDownSecond" class="totalsec"></p>
+            <p id="totalCountDownMinute" class="totalmin"></p>
+            <p id="totalCountDownHour" class="totalhour"></p>
+        </div>
     </body>
 </html>
 <script src="alsoImportant.js"></script>
