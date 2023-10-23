@@ -11,59 +11,21 @@ h1 {
   color: #ccc;
 }
 
+h2 {
+  font-family: candara,verdana,sans-serif;
+  font-size: 48pt;
+  text-align: center;
+}
+
 h3 {
   font-family: constantia,georgia,serif;
   font-size: 20pt;
-  animation: flash 1s infinite;
-  color: #ccc;
-}
-
-@keyframes flash {
-  0% {
-    color: #00FF00;
-  }
-  100% {
-    color: #ccc;
-  }
-}
-
-@keyframes rainbowFlash {
-  0%, 100% {
-    color: red;
-    text-shadow: 0 0 10px red;
-  }
-  14% {
-    color: orange;
-    text-shadow: 0 0 10px orange;
-  }
-  28% {
-    color: yellow;
-    text-shadow: 0 0 10px yellow;
-  }
-  42% {
-    color: green;
-    text-shadow: 0 0 10px green;
-  }
-  57% {
-    color: blue;
-    text-shadow: 0 0 10px blue;
-  }
-  71% {
-    color: indigo;
-    text-shadow: 0 0 10px indigo;
-  }
-  85% {
-    color: violet;
-    text-shadow: 0 0 10px violet;
-  }
 }
 
 p {
   font-family: constantia,georgia,serif;
   font-size: 20pt;
   text-align: center;
-  animation: flash 1s infinite;
-  color: #ccc;
 }
 
 .sec{
@@ -114,13 +76,6 @@ p {
   left: 71%;
 }
 
-h2 {
-  font-family: candara,verdana,sans-serif;
-  font-size: 48pt;
-  text-align: center;
-  color: #ccc;
-}
-
 .Monday {
   color: #FF0000;
 }
@@ -168,16 +123,24 @@ h2 {
   top: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 5s;
+  transition: opacity 1s;
 }
 
 .hidden-image img {
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 70%;
 }
 
 .image-container:hover .hidden-image {
   opacity: 1;
+  transition: opacity ease-in 10s;
+}
+
+.stareText {
+  color: white;
+  font-family: candara,verdana,sans-serif;
+  font-size: 12pt;
+  text-align: left;
 }
 
 #language-selection {
@@ -207,6 +170,63 @@ h2 {
   width: 100px; /* Set the width to match your image width */
   height: 100px; /* Set the height to match your image height */
   animation: beerfall 8s ease-in infinite;
+}
+
+.flashingTextDark {
+  animation: flashDark 1s infinite;
+}
+
+.flashingTextLight {
+  animation: flashLight 1s infinite;
+}
+
+@keyframes flashDark {
+  0% {
+    color: #00FF00;
+  }
+  100% {
+    color: #ccc;
+  }
+}
+
+@keyframes flashLight {
+  0% {
+    color: gold;
+  }
+  100% {
+    color: #000;
+  }
+}
+
+@keyframes rainbowFlash {
+  0%, 100% {
+    color: red;
+    text-shadow: 0 0 10px red;
+  }
+  14% {
+    color: orange;
+    text-shadow: 0 0 10px orange;
+  }
+  28% {
+    color: yellow;
+    text-shadow: 0 0 10px yellow;
+  }
+  42% {
+    color: green;
+    text-shadow: 0 0 10px green;
+  }
+  57% {
+    color: blue;
+    text-shadow: 0 0 10px blue;
+  }
+  71% {
+    color: indigo;
+    text-shadow: 0 0 10px indigo;
+  }
+  85% {
+    color: violet;
+    text-shadow: 0 0 10px violet;
+  }
 }
 
 @keyframes beerfall {
