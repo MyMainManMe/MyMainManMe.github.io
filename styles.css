@@ -3,6 +3,12 @@ body {
   overflow: hidden
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+}
+
 h1 {
   font-family: constantia,georgia,serif;
   font-size: 36pt;
