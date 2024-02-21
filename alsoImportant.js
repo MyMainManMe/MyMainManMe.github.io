@@ -6,7 +6,7 @@ function whatDayIsit() {
   let d = new Date();
   let dateNum = d.getDay();
   if (lang === 0){
-    title.innerHTML = "<a href="https://stregsystem.fklub.dk/">Hvilken dag er det?</a>";
+    title.innerHTML = '<a href="https://stregsystem.fklub.dk/">Hvilken dag er det?</a>';
     switch (dateNum){
       case 0:
         elem.innerHTML = "Søndag";
@@ -50,7 +50,7 @@ function whatDayIsit() {
     }
   }
   if (lang === 1){
-    title.innerHTML = "<a href="https://stregsystem.fklub.dk/">What day is it?</a>";
+    title.innerHTML = '<a href="https://stregsystem.fklub.dk/">What day is it?</a>';
     switch (dateNum){
       case 0:
         elem.innerHTML = "Sunday";
