@@ -9,6 +9,8 @@ h1 {
   text-align: center;
   line-height: 3em;
   color: #ccc;
+  text-decoration: none;
+  cursor: default;
 }
 
 h2 {
